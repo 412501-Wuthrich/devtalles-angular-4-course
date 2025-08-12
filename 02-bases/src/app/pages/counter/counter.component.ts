@@ -9,7 +9,10 @@ import { Component } from '@angular/core';
 export class CounterComponent {
   counter = 10;
 
-  increaseByOne(value: number){
+  increaseBy(value: number){
     this.counter += value;
+  }
+  resetCounter() {
+    this.counter = 10;
   }
 }

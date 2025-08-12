@@ -8,11 +8,11 @@
   <dd>{{ heroAge() }}</dd>
 
   <td>Método:</td>
-  <dd>{{ getHeroDescription() }}</dd>
+  <dd>{{ heroDescription() }}</dd>
 
   <td>Capitalizado:</td>
-  <!-- ! Intentar  -->
-   <dd> {{ toUpper(heroName()) }} </dd>
+  <!-- ! Uso de pipes en angular, permite transformar la manera de como renderizar el dato sin modificarlo  -->
+   <dd> {{ heroName() | uppercase }} </dd>
 </dl>
 
 <button (click)="changeHero()" class="btn btn-primary mx-2">

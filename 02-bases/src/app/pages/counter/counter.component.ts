@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, signal} from '@angular/core';
 
 @Component({
   selector: 'app-counter',
@@ -8,11 +8,14 @@ import { Component } from '@angular/core';
 })
 export class CounterComponent {
   counter = 10;
+  //Signal = guardan estado , se invocan como una funcion "Derivar", y se usan con un effect()
+  counterSignal = signal(10)
 
   increaseBy(value: number){
     this.counter += value;
+    this.counterSignal.update(current => current + value)
   }
   resetCounter() {
-    this.counter = 10;
+    this.counterSignal.set(0) //Con set pisamos los valores que traia antes la signal
   }
 }

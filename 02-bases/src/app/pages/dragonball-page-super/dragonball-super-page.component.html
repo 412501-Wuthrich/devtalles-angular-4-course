@@ -1,0 +1,18 @@
+<h1>Dragon Ball Page</h1>
+<hr>
+
+<section class="row">
+  <div class="col-12 col-sm-6">
+    <!----con el $event obtenemos el valor del output declarado en el archivo ts ------>
+    <Dragonball-character-add
+      (newCharacter)="dragonBallService.addCharacter($event)"
+    />
+  </div>
+
+  <div class="col-12 col-sm-6 row">
+    <Dragonball-character-list
+      listName="Lista de PJs"
+      [characters]="dragonBallService.characters()"
+    />
+  </div>
+</section>
